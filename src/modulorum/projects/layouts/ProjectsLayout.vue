@@ -2,7 +2,7 @@
 <template>
     <SupraMenu />
 
-    <main>
+    <main class="flex flex-row">
         <LateralisMenu />
         <router-view />
     </main>
