@@ -14,9 +14,9 @@
                                 <RouterLink :to="`/projects/${project.id}`">{{ project.nomen }}</RouterLink>
                             </summary>
                             <ul>
-                                        <li v-for="chore in project.chores" :key="chore.id">
-                                            <RouterLink :to="`/projects/${project.id}`">{{ chore.nomen }}</RouterLink>
-                                        </li>
+                                <li v-for="chore in project.chores" :key="chore.id">
+                                        <RouterLink :to="`/projects/${project.id}`">{{ chore.nomen }}</RouterLink>
+                                </li>
                             </ul>
                         </details>
                     </template>
@@ -24,12 +24,11 @@
                     <template v-else>
                         <RouterLink :to="`/projects/${project.id}`">{{ project.nomen }}</RouterLink>
                     </template>
-
                 </li>
         </ul>
     </aside>
-    
 </template>
+
 
 <script lang="ts" setup>
 import { useProjectsStore } from '../stores/projects.store';
