@@ -13,7 +13,13 @@ const router = createRouter({
         {
           path: 'projects',
           name: 'projects',
-          component: () => import('@/modulorum/projects/views/ProjectsView.vue')
+          component: () => import('@/modulorum/projects/views/ProjectsView.vue'),
+        },
+        {
+          path: 'projects/:id',
+          props: true,
+          name: 'project',
+          component: () => import('@/modulorum/projects/views/ProjectView.vue'),
         }
       ]
     }

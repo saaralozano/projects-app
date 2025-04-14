@@ -18,10 +18,22 @@ export const useProjectsStore = defineStore('projects', () => {
             chores: [],
         });
     }
+
+    const addereChoreAdProject = (projectId: string, choreNomen: string) => {
+        if (choreNomen.trim().length === 0) return;
+        const project = projects.value.find(p => p.id === projectId);
+        if(!project) return;
+        project.chores.push({
+            id: uuidv4(),
+            nomen: choreNomen,
+        });
+    }
+
     return {
         projects,
         projectList: computed(() => [...projects.value]),
         addereProject,
         nonProject: computed(() => projects.value.length === 0),
+        addereChoreAdProject,
     }
 });
